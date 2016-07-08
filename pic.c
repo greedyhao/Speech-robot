@@ -32,6 +32,8 @@ int searchdir(const char *path, char *filename[],const char *split)
 int Picture_Player(intel_pjt_t *intel_pjt)
 {
 	// printf("启动电子相册！\n");
+	Display_Pic(UI_PICT_PIC_PATH,0,0);
+	
 	char *path = PICT_LOAD_PATH;
     char *filename[PICTS_MAX_LEN] = {0};
     char *split = "";

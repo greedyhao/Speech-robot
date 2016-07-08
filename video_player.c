@@ -1,7 +1,6 @@
 #include "project.h"
 
 static int flag_start = 0;
-static int flag_stop = 0;
 static int flag_status = 0;
 
 static void *player(void *arg)
@@ -13,6 +12,7 @@ static void *player(void *arg)
 int Video_Player(intel_pjt_t *intel_pjt)
 {
 	// printf("启动视频播放器！\n");
+	Display_Pic(UI_VIDEO_PIC_PATH,0,0);
 	pthread_t video_id;
 
 	while (1)
@@ -48,13 +48,13 @@ int Video_Player(intel_pjt_t *intel_pjt)
 		if (intel_pjt->ts_info.ts_x > 770 && intel_pjt->ts_info.ts_x < 800 &&
 			intel_pjt->ts_info.ts_y > 0 && intel_pjt->ts_info.ts_y < 45)
 		{
-			goto_main_ui();
 			if (flag_start)
 			{
+				flag_start = 0;
 				pthread_cancel(video_id);
 				system("killall -9 mplayer");
 			}
-			
+			goto_main_ui();
 			break;
 		}
 		

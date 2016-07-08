@@ -3,11 +3,13 @@
 void *game_thread(void *arg)
 {
 	system("./2048");
+	return 0;
 }
 
 int Game(intel_pjt_t *intel_pjt)
 {
 	// printf("启动游戏！\n");
+	Display_Pic(UI_GAME_PIC_PATH,0,0);
 	pthread_t game_id;
 	int flag_game = 0;
 
@@ -27,13 +29,15 @@ int Game(intel_pjt_t *intel_pjt)
 		{
 			if (flag_game)
 			{
+				flag_game = 0;
 				pthread_cancel(game_id);
+				system("killall -9 2048");
 			}
 			
-			system("killall -9 2048");
 			goto_main_ui();
 			break;
 		}
 	}
+	return 0;
 	
 }

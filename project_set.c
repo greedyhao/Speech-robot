@@ -21,6 +21,7 @@ int Get_ts_info()
 
 	intel_pjt.ts_info.ts_x = x*800/1024;
 	intel_pjt.ts_info.ts_y = y*480/600;
+	return 0;
 }
 
 int Display_Pic(char * pic_path, int dis_x, int dis_y)
@@ -106,6 +107,9 @@ int Init_Pro()
 		perror("mmap failed!");
 	}
 	
+	sprintf(intel_pjt.serve_ip, "%s", MY_SERVER_IP);
+ 	intel_pjt.socket_fd = init_sock(intel_pjt.serve_ip); //由命令行传入一个对方的IP 等效于socket+bind+listen+accept   ./xxx 192.168.1.112
+
 	Display_Pic(UI_MAIN_PIC_PATH,0,0);
 
 	return 0;
@@ -120,12 +124,13 @@ int End_Pro()
 
 	close(intel_pjt.lcd);
 	close(intel_pjt.ts);
+	close(intel_pjt.socket_fd);
 	munmap(intel_pjt.lcd_mmap, MMAP_LENGTH);
 
 	_exit(0);
 }
 
-int goto_main_ui()
+void goto_main_ui()
 {
 	Display_Pic(UI_MAIN_PIC_PATH,0,0);
 }
@@ -150,25 +155,21 @@ int main_pjt()
 			if (intel_pjt.ts_info.ts_x > 20 && intel_pjt.ts_info.ts_x < 127 &&
 				intel_pjt.ts_info.ts_y > 359 && intel_pjt.ts_info.ts_y < 458)
 			{
-				Display_Pic(UI_GAME_PIC_PATH,0,0);
 				Game(&intel_pjt);
 			}
 			if (intel_pjt.ts_info.ts_x > 152 && intel_pjt.ts_info.ts_x < 260 &&
 				intel_pjt.ts_info.ts_y > 359 && intel_pjt.ts_info.ts_y < 458)
 			{
-				Display_Pic(UI_MUSIC_PIC_PATH,0,0);
 				Music_Player(&intel_pjt);
 			}
 			if (intel_pjt.ts_info.ts_x > 548 && intel_pjt.ts_info.ts_x < 660 &&
 				intel_pjt.ts_info.ts_y > 359 && intel_pjt.ts_info.ts_y < 458)
 			{
-				Display_Pic(UI_PICT_PIC_PATH,0,0);
 				Picture_Player(&intel_pjt);
 			}
 			if (intel_pjt.ts_info.ts_x > 683 && intel_pjt.ts_info.ts_x < 780 &&
 				intel_pjt.ts_info.ts_y > 362 && intel_pjt.ts_info.ts_y < 456)
 			{
-				Display_Pic(UI_VIDEO_PIC_PATH,0,0);
 				Video_Player(&intel_pjt);
 			}
 			if (intel_pjt.ts_info.ts_x > 362 && intel_pjt.ts_info.ts_x < 461 &&

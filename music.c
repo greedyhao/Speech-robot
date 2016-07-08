@@ -3,12 +3,13 @@
 char *music_list = "anjing.mp3";
 
 static int flag_start = 0;
-static int flag_stop = 0;
+// static int flag_stop = 0;
 static int flag_status = 0;
 
 int Music_Player(intel_pjt_t *intel_pjt)
 {
 	// printf("启动音乐播放器！\n");
+	Display_Pic(UI_MUSIC_PIC_PATH,0,0);
 
 	while (1)
 	{

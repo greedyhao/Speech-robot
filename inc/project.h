@@ -38,6 +38,9 @@
 #define PICTS_MAX_LEN       20
 #define PICT_LOAD_PATH      "./imgs/show/"
 
+#define IP_NUM          50
+#define MY_SERVER_IP    "192.168.1.164"
+
 typedef struct 
 {
     int ts_x;
@@ -57,6 +60,8 @@ typedef struct
     int ts;
     pjt_event_t event;
     ts_info_t ts_info;
+    int socket_fd;//套接字文件描述符
+	char serve_ip[IP_NUM];
 }intel_pjt_t;
 
 
@@ -83,7 +88,7 @@ int Init_Pro();
 int End_Pro();
 int main_pjt();
 int Get_ts_info();
-int goto_main_ui();
+void goto_main_ui();
 int Display_Pic(char * pic_path, int dis_x, int dis_y);
 
 
