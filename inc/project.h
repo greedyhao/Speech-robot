@@ -35,6 +35,8 @@
 #define UI_PICT_N_PIC_PATH  "./imgs/v1_0/next.bmp"
 #define UI_PICT_C_PIC_PATH  "./imgs/v1_0/close.bmp"
 
+#define UI_VIDEO_CNTL_PATH  "./imgs/v1_0/video_cntl.bmp"
+
 #define PICTS_MAX_LEN       20
 #define PICT_LOAD_PATH      "./imgs/show/"
 
@@ -72,13 +74,13 @@ int Music_Player(intel_pjt_t *intel_pjt);
 
 /***video_player.c***/
 int Video_Player(intel_pjt_t *intel_pjt);
+int Init_Player();
 
 /***pic.c***/
 int Picture_Player(intel_pjt_t *intel_pjt);
 
 /***game.c***/
 int Game(intel_pjt_t *intel_pjt);
-// void *Game(void *intel_pjt);
 
 /***sournd.c***/
 int Sound(intel_pjt_t *intel_pjt);

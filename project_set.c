@@ -110,6 +110,8 @@ int Init_Pro()
 	sprintf(intel_pjt.serve_ip, "%s", MY_SERVER_IP);
  	intel_pjt.socket_fd = init_sock(intel_pjt.serve_ip); //由命令行传入一个对方的IP 等效于socket+bind+listen+accept   ./xxx 192.168.1.112
 
+	Init_Player();
+
 	Display_Pic(UI_MAIN_PIC_PATH,0,0);
 
 	return 0;
