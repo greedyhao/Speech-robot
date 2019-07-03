@@ -16,7 +16,7 @@ int Get_ts_info()
 	{
 		intel_pjt.ts_info.flag_press = 0;
 	}
-	if(intel_pjt.event.touch.type == EV_KEY && intel_pjt.event.touch.code == BTN_TOUCH && intel_pjt.event.touch.value > 0) //手没离开
+	if(intel_pjt.event.touch.type == EV_KEY && intel_pjt.event.touch.code == BTN_TOUCH && intel_pjt.event.touch.value == 1) //手没离开
 	{
 		intel_pjt.ts_info.flag_press = 1;
 	}

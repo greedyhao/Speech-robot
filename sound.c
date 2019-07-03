@@ -23,31 +23,25 @@ int Sound(intel_pjt_t *intel_pjt)
 	// printf("sound in\n");
 	// extern intel_pjt_t intel_pjt;
 
-	if (intel_pjt->fun_sw.sw_sound)
+	while (1)
 	{
-		while (1)
+		Get_ts_info();
+		// printf("%d ", intel_pjt->ts_info.flag_press);
+		if (intel_pjt->ts_info.flag_press)
 		{
-			Get_ts_info();
+			pthread_create(&sound_id,NULL,Pic_Go,NULL);
+			// printf("S: ");
 			// printf("%d ", intel_pjt->ts_info.flag_press);
-			if (intel_pjt->ts_info.flag_press)
-			{
-				pthread_create(&sound_id,NULL,Pic_Go,NULL);
-				// printf("%d ", intel_pjt->ts_info.flag_press);
-			}
-			else
-			{
-				if (intel_pjt->fun_sw.sw_sound)
-				{
-					intel_pjt->fun_sw.sw_sound = 0;
-					// printf("sound exit\n");
-					pthread_cancel(sound_id);
-					goto_main_ui();
-					
-					break;
-				}
-			}
-			
 		}
+		else
+		{
+			// printf("sound exit\n");
+			pthread_cancel(sound_id);
+			goto_main_ui();
+			
+			break;
+		}
+		
 	}
 
 	return 0;
