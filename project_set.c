@@ -141,46 +141,35 @@ int main_pjt()
 			if (intel_pjt.ts_info.ts_x > 339 && intel_pjt.ts_info.ts_x < 437 &&
 			intel_pjt.ts_info.ts_y > 181 && intel_pjt.ts_info.ts_y < 274)
 			{
-				// pthread_create(&music_id,NULL,Music_Player,NULL);	
 				End_Pro();
 			}
 			if (intel_pjt.ts_info.ts_x > 12 && intel_pjt.ts_info.ts_x < 131 &&
 				intel_pjt.ts_info.ts_y > 300 && intel_pjt.ts_info.ts_y < 401)
 			{
-				// pthread_create(&game_id,NULL,Game,(void *)&intel_pjt);	
 				Display_Pic(UI_GAME_PIC_PATH,0,0);
-				// intel_pjt.fun_sw.sw_game = 1;
 				Game(&intel_pjt);
-				// printf("B: ");
 			}
 			if (intel_pjt.ts_info.ts_x > 233 && intel_pjt.ts_info.ts_x < 350 &&
 				intel_pjt.ts_info.ts_y > 300 && intel_pjt.ts_info.ts_y < 401)
 			{
-				// pthread_create(&music_id,NULL,Music_Player,NULL);	
-				// intel_pjt.fun_sw.sw_music = 1;
 				Display_Pic(UI_MUSIC_PIC_PATH,0,0);
 				Music_Player(&intel_pjt);
 			}
 			if (intel_pjt.ts_info.ts_x > 450 && intel_pjt.ts_info.ts_x < 568 &&
 				intel_pjt.ts_info.ts_y > 300 && intel_pjt.ts_info.ts_y < 401)
 			{
-				// pthread_create(&music_id,NULL,Music_Player,NULL);	
-				// intel_pjt.fun_sw.sw_pict = 1;
 				Display_Pic(UI_PICT_PIC_PATH,0,0);
 				Picture_Player(&intel_pjt);
 			}
 			if (intel_pjt.ts_info.ts_x > 670 && intel_pjt.ts_info.ts_x < 790 &&
 				intel_pjt.ts_info.ts_y > 300 && intel_pjt.ts_info.ts_y < 401)
 			{
-				// pthread_create(&music_id,NULL,Music_Player,NULL);	
-				// intel_pjt.fun_sw.sw_vedio = 1;
 				Display_Pic(UI_VIDEO_PIC_PATH,0,0);
 				Video_Player(&intel_pjt);
 			}
 			if (intel_pjt.ts_info.ts_x > 700 && intel_pjt.ts_info.ts_x < 800 &&
 				intel_pjt.ts_info.ts_y > 0 && intel_pjt.ts_info.ts_y < 100)
 			{
-				// intel_pjt.fun_sw.sw_sound = 1;
 				Sound(&intel_pjt);
 				// pthread_create(&music_id,NULL,Music_Player,NULL);	
 			}
