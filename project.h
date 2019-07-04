@@ -49,21 +49,11 @@ typedef struct
     struct input_event touch;
 }pjt_event_t;
 
-typedef struct
-{
-    int sw_music;
-    int sw_vedio;
-    int sw_pict;
-    int sw_game;
-    int sw_sound;
-}fun_sw_t;
-
 typedef struct 
 {
     int lcd;
     int *lcd_mmap;
     int ts;
-    fun_sw_t    fun_sw;
     pjt_event_t event;
     ts_info_t ts_info;
 }intel_pjt_t;

@@ -12,7 +12,6 @@ int Video_Player(intel_pjt_t *intel_pjt)
 		if (intel_pjt->ts_info.ts_x > 770 && intel_pjt->ts_info.ts_x < 800 &&
 			intel_pjt->ts_info.ts_y > 0 && intel_pjt->ts_info.ts_y < 45)
 		{
-			intel_pjt->fun_sw.sw_vedio = 0;
 			goto_main_ui();
 			break;
 		}

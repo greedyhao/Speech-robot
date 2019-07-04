@@ -4,7 +4,6 @@ int searchdir(const char *path, char *filename[],const char *split)
 {
     DIR *dp;
     struct dirent *dirp;
-    // char *buff;
 
     if ((dp = opendir(path)) == NULL)
     {
@@ -23,8 +22,6 @@ int searchdir(const char *path, char *filename[],const char *split)
         if (strcmp((dirp->d_name + ( size - 4)), ".bmp")!=0)
             continue;
 
-        // sprintf(buff, "%s%s", path, strtok(dirp->d_name, split));
-        // filename[strL++] = buff;
 		filename[strL++] = strtok(dirp->d_name, split);
     }
 

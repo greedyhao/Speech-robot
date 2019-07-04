@@ -19,7 +19,6 @@ int Get_ts_info()
 		intel_pjt.ts_info.flag_press = 1;
 	}
 
-
 	intel_pjt.ts_info.ts_x = x*800/1024;
 	intel_pjt.ts_info.ts_y = y*480/600;
 }
