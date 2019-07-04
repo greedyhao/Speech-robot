@@ -118,6 +118,8 @@ int End_Pro()
 	printf("结束释放项目！\n");
 	Display_Pic(UI_EXIT_PIC_PATH,0,0);
 
+	system("killall -9 madplay");
+
 	close(intel_pjt.lcd);
 	close(intel_pjt.ts);
 	munmap(intel_pjt.lcd_mmap, MMAP_LENGTH);

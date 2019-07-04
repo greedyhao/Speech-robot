@@ -6,7 +6,5 @@ int main()
 
 	main_pjt();
 
-	// End_Pro();
-	
 	return 0;
 }
