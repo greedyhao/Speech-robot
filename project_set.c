@@ -135,6 +135,10 @@ int main_pjt()
 	while (1)
 	{
 		Get_ts_info();
+
+		if (intel_pjt.ts_info.ts_x < 0 || intel_pjt.ts_info.ts_x > 800 ||
+			intel_pjt.ts_info.ts_y < 0 || intel_pjt.ts_info.ts_y > 480)
+			continue;
 		
 		if (intel_pjt.ts_info.flag_press)
 		{
@@ -171,15 +175,9 @@ int main_pjt()
 				intel_pjt.ts_info.ts_y > 360 && intel_pjt.ts_info.ts_y < 460)
 			{
 				Sound(&intel_pjt);
-				// pthread_create(&music_id,NULL,Music_Player,NULL);	
 			}
 			
 		}
-		else
-		{
-			
-		}
-		
 	}
 	
 }
