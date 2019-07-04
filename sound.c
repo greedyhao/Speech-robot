@@ -6,11 +6,11 @@ void * Pic_Go(void * arg)
 	while(1)
 	{
 		usleep(50000);  
-		Display_Pic("./1.bmp",700,0);
+		Display_Pic("./1.bmp",362,360);
 		usleep(50000);
-		Display_Pic("./2.bmp",700,0);
+		Display_Pic("./2.bmp",362,360);
 		usleep(50000);
-		Display_Pic("./3.bmp",700,0);
+		Display_Pic("./3.bmp",362,360);
 	}
 
 	return NULL;
