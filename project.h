@@ -12,18 +12,14 @@
 #include <errno.h>
 #include <linux/input.h>
 #include <stdlib.h>
+#include <dirent.h>
+#include <string.h>
 
 /** 相关宏定义 */
 #define LCD_DEV_PATH    "/dev/fb0"
 #define TS_DEV_PATH     "/dev/input/event0"
 #define MMAP_LENGTH     800*480*4
 
-// #define UI_MAIN_PIC_PATH    "./imgs/main.bmp"
-// #define UI_EXIT_PIC_PATH    "./imgs/exit.bmp"
-// #define UI_MUSIC_PIC_PATH   "./imgs/music.bmp"
-// #define UI_VIDEO_PIC_PATH   "./imgs/video.bmp"
-// #define UI_PICT_PIC_PATH   "./imgs/p_c.bmp"
-// #define UI_GAME_PIC_PATH   "./imgs/game.bmp"
 #define UI_MAIN_PIC_PATH    "./imgs/v1_0/main.bmp"
 #define UI_EXIT_PIC_PATH    "./imgs/v1_0/exit.bmp"
 #define UI_MUSIC_PIC_PATH   "./imgs/v1_0/music.bmp"
@@ -33,6 +29,13 @@
 #define UI_MIC1_PIC_PATH   "1.bmp"
 #define UI_MIC2_PIC_PATH   "2.bmp"
 #define UI_MIC3_PIC_PATH   "3.bmp"
+
+#define UI_PICT_L_PIC_PATH  "./imgs/v1_0/left.bmp"
+#define UI_PICT_N_PIC_PATH  "./imgs/v1_0/next.bmp"
+#define UI_PICT_C_PIC_PATH  "./imgs/v1_0/close.bmp"
+
+#define PICTS_MAX_LEN       20
+#define PICT_LOAD_PATH      "./imgs/show/"
 
 typedef struct 
 {

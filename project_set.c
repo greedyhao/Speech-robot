@@ -2,8 +2,6 @@
 
 intel_pjt_t intel_pjt;
 
-
-
 int Get_ts_info()
 {
 	int x,y;
@@ -38,7 +36,8 @@ int Display_Pic(char * pic_path, int dis_x, int dis_y)
 	int bmp = open(pic_path,O_RDONLY);//打开图片
 	if(bmp == -1)
 	{
-		perror("打开图片失败！");
+		printf("opening %s\n", pic_path);
+		perror("打开图片失败!");
 	}
 
 	int *rend_p = intel_pjt.lcd_mmap + 800*dis_y + dis_x;
