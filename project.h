@@ -18,6 +18,7 @@
 /** 相关宏定义 */
 #define LCD_DEV_PATH    "/dev/fb0"
 #define TS_DEV_PATH     "/dev/input/event0"
+#define KB_DEV_PATH     "/dev/input/event4"
 #define MMAP_LENGTH     800*480*4
 
 #define UI_MAIN_PIC_PATH    "./imgs/v1_0/main.bmp"
