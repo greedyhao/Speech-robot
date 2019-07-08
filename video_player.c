@@ -49,8 +49,12 @@ int Video_Player(intel_pjt_t *intel_pjt)
 			intel_pjt->ts_info.ts_y > 0 && intel_pjt->ts_info.ts_y < 45)
 		{
 			goto_main_ui();
-			pthread_cancel(video_id);
-			system("killall -9 mplayer");
+			if (flag_start)
+			{
+				pthread_cancel(video_id);
+				system("killall -9 mplayer");
+			}
+			
 			break;
 		}
 		
