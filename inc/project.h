@@ -27,9 +27,9 @@
 #define UI_VIDEO_PIC_PATH   "./imgs/v1_0/vedio.bmp"
 #define UI_PICT_PIC_PATH   "./imgs/v1_0/moments.bmp"
 #define UI_GAME_PIC_PATH   "./imgs/v1_0/game.bmp"
-#define UI_MIC1_PIC_PATH   "1.bmp"
-#define UI_MIC2_PIC_PATH   "2.bmp"
-#define UI_MIC3_PIC_PATH   "3.bmp"
+#define UI_MIC1_PIC_PATH   "./imgs/1.bmp"
+#define UI_MIC2_PIC_PATH   "./imgs/2.bmp"
+#define UI_MIC3_PIC_PATH   "./imgs/3.bmp"
 
 #define UI_PICT_L_PIC_PATH  "./imgs/v1_0/left.bmp"
 #define UI_PICT_N_PIC_PATH  "./imgs/v1_0/next.bmp"

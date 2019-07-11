@@ -19,6 +19,33 @@
 + MY_SERVER_IP 为提供语音识别电脑的 IP
 + [游戏](game.c)需要使用另外一个 [fb_2048 的项目](https://github.com/greedyhao/fb_2048)的内容，需要下载下来
 
+项目整体结构如下
+
+```
+.
+├── build.sh        旧版编译脚本
+├── common.c
+├── download.sh
+├── game.c          游戏
+├── imgs            图片文件目录
+├── inc
+├── lib
+├── main.c
+├── Makefile
+├── music.c         音乐播放器
+├── others
+├── pic.c           相册
+├── project_set.c   项目整体架构建设
+├── README.md
+├── sound.c         语音控制
+├── upload.sh
+└── video_player.c  视频播放
+```
+
+others/asr_record_demo 这个文件就是用来提供语音识别的，提供5个关键字 启动游戏 播放音乐 播放视频 启动相册 退出，使用时电脑时间需要在 2016 年
+
+others/alsa.tar.gz 需要安装到开发板
+
 -----
 
 # 项目进程
